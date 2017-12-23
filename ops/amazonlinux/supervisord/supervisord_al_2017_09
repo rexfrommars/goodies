@@ -8,6 +8,9 @@
 #                   for child processes to shutdown, and startup later
 #               Erwan Queffelec <erwan.queffelec@gmail.com>
 #                   make script LSB-compliant
+#               Rex Junshu Wang <rex.wang.starry@gmail.com>
+#                   default path changed to /usr/local/bin/, where pip installs supervisor3.3.3 into
+#                   add '-j ${pidfile}' into the start command
 #
 # chkconfig:    345 83 04
 # description: Supervisor is a client/server system that allows \
@@ -38,8 +41,8 @@ fi
 
 # Path to the supervisorctl script, server binary,
 # and short-form for messages.
-supervisorctl=/usr/bin/supervisorctl
-supervisord=${SUPERVISORD-/usr/bin/supervisord}
+supervisorctl=${SUPERVISORCTL-/usr/local/bin/supervisorctl}
+supervisord=${SUPERVISORD-/usr/local/bin/supervisord}
 prog=supervisord
 pidfile=${PIDFILE-/var/run/supervisord.pid}
 lockfile=${LOCKFILE-/var/lock/subsys/supervisord}
@@ -49,7 +52,7 @@ RETVAL=0
 
 start() {
     echo -n $"Starting $prog: "
-    daemon --pidfile=${pidfile} $supervisord $OPTIONS
+    daemon --pidfile=${pidfile} $supervisord -j ${pidfile} $OPTIONS
     RETVAL=$?
     echo
     if [ $RETVAL -eq 0 ]; then
