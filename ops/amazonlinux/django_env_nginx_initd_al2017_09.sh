@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#
+# Composed by Rex Junshu Wang <rex.wang.starry@gmail.com>
+# This scirpt initialises the django-gunicorn-supervisord-nginx environment on Amazon-Linux-2017-09.
+# This script has been tested on an EC2 instance and an Lightsail instance.
+# December 2017
+#
+
+
 BOUNDARY="================================"
 
 echo ""
@@ -154,7 +162,3 @@ echo ""
 echo ${BOUNDARY}
 echo ""
 echo "DONE"
-
-
-
-
