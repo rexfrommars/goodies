@@ -2,8 +2,8 @@
 
 #
 # Composed by Rex Junshu Wang <rex.wang.starry@gmail.com>
-# This scirpt initialises the django-gunicorn-supervisord-nginx environment on Amazon-Linux-2017-09.
-# This script has been tested on an EC2 instance and an Lightsail instance.
+# This script initialises the django-gunicorn-supervisord-nginx environment on Amazon-Linux-2017-09.
+# This script has been tested on an EC2 instance and a Lightsail instance.
 # December 2017
 #
 
